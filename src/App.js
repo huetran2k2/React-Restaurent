@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+// import Content from './Component/Content';
+// import { Routes, Route } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// // import Card from './Component/Restaurant/Item_card';
+import Bill from './Component/Restaurant/Bill';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Content></Content>
+      <Link to="/Item_card"><i style={{position:'fixed', bottom: 50, right: 50, fontSize:"30px" }} className="fa-solid fa-cart-shopping"></i></Link>
+      <Routes>
+        <Route path="/Item_card" element={<Card />} />
+      </Routes> */}
+      <Bill></Bill>
+
+      
     </div>
   );
 }
