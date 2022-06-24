@@ -19,7 +19,7 @@ class List extends Component {
   }
   componentDidMount() {
 
-    axios.get('http://localhost:3006/dataProduct').then(res => {
+    axios.get('http://localhost:3000/dataProduct').then(res => {
       this.setState({ products: res.data });
     })
   };

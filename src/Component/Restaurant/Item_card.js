@@ -247,7 +247,6 @@ export default class Card extends Component {
                 className="btn btn-outline-success"
               >
                 <Link className="text-success" to="/Bill"> Check out</Link>
-               
               </button>
               <Routes>
                 <Route path="/Menu" element={<List />} />

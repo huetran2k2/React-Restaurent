@@ -63,9 +63,17 @@ export default class Bill extends Component {
           [event.target.name]: event.target.value
         });
       };
+
+      // Total = () => {
+      //   const total = this.state.products.map((product) => (
+      //     product.details.reduce((total, currentValue) => total = total + currentValue.prix,0)
+      //   ));
+      //   return <p>Totalzzz: {total}</p>;
+      // }
+
     render() {
         return (
-            <div>
+            <div style={{ position: "fixed", top: 0, width: "100%", height: "100%", zIndex: 1, background: "white", overflow: "scroll" }}>
                  <div className="row">
               {this.state.products.map((product) => (
                 <div className="card col-4" style={{ width: "18rem" }}>
@@ -77,9 +85,11 @@ export default class Bill extends Component {
                       <div className="col-6">Phone Number: <b className="text-danger">${product.phoneNumber}</b></div>
                       <div className="col-6">Address: <b className="text-danger">${product.address}</b></div>
                       {/* {console.log(product.details[2].cost)} */}
-                      {product.details.reduce((total, currentValue) => total = total + currentValue.prix,0)}
+                      {/* {product.details.reduce((total, currentValue) => total = total + currentValue.prix,0)} */}
+
+                      
                       <>
-                        <p></p>
+                        <p>{product.details.reduce((total,currentValue) => total = total + currentValue.prix ,0)}</p>
                       </>
                     </div>        
                   </div>
