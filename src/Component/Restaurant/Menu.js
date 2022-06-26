@@ -1,121 +1,196 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './style.css';
-import FilterRes from './FilterRes';
-import Cardd from './card';
+import React, { Component } from "react";
+import axios from "axios";
+import "./style.css";
+import FilterRes from "./FilterRes";
+import Cardd from "./card";
 
 class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
       products: [],
-      id: '',
-      nameFood: '',
-      image: '',
-      option: ''
-    }
+      id: "",
+      nameFood: "",
+      image: "",
+      optionName: "",
+      optionPrice: "",
+    };
     this.componentDidMount = this.componentDidMount.bind(this);
-     this.onHandlerChange = this.onHandlerChange.bind(this);
+    this.onHandlerChange = this.onHandlerChange.bind(this);
   }
   componentDidMount() {
-
-    axios.get('http://localhost:3000/dataProduct').then(res => {
+    axios.get("http://localhost:3000/dataProduct").then((res) => {
       this.setState({ products: res.data });
-    })
-  };
+    });
+  }
   // searchByName() {
-      
+
   // }
 
-
-  onHandlerChange(event){
+  onHandlerChange(event) {
     this.setState({
-      option: event.target.value
-    }
-   
-    );
-    console.log(this.state)
+      optionName: event.target.value,
+    });
+    console.log(this.state);
   }
   render() {
     return (
       <>
-      <section className="food-area section-padding">
-        <div className='container-fluid content'>
-
-          <div className='left'>
-            <FilterRes option={this.state.option}
-              change = {this.onHandlerChange}
-            />
-            {/* <div className='res'>
-              <h4>Lựa chọn nhà hàng</h4>
-              <form className='optionRes'>
-                <span><input name="dori" type="radio" value="NH Dori" /> NH Dori</span>
-                <span><input name="hongHanh" type="radio" value="NH Hồng Hạnh" /> NH Hồng Hạnh</span>
-                <span><input name="phuongNam" type="radio" value="NH Phương Nam" /> NH Phương Nam</span>
-              </form> */}
-            {/* </div> */}
-            {/* <div className='res'>
-              <h4>Lựa chọn giá</h4>
-              <form className='optionRes'>
-                <span><input name="10-15" type="radio" value="10-15" /> 10-15</span>
-                <span><input name="15-20" type="radio" value="15-20" /> 15-20</span>
-                <span><input name="{'>'}20" type="radio" value="{'>'}20" /> {'>'}20</span>
-              </form>
-            </div> */}
-          </div>
-          <div className="right">
+        {/* Welcome Area Starts */}
+        <section className="welcome-area section-padding2">
+          <div className="container-fluid">
             <div className="row">
-              <div className="col-md-5">
-                <div className="section-top">
-                  <h3><span className="style-change">we serve</span> <br />delicious food</h3>
-                  <p className="pt-3">They're fill divide i their yielding our after have him fish on there for greater man moveth, moved Won't together isn't for fly divide mids fish firmament on net.</p>
+              <div className="col-md-6 align-self-center">
+                <div className="welcome-img">
+                  <img
+                    src="assets/images/welcome-bg.png"
+                    className="img-fluid"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className="col-md-6 align-self-center">
+                <div className="welcome-text mt-5 mt-md-0">
+                  <h3>
+                    <span className="style-change">welcome</span> <br />
+                    to food fun
+                  </h3>
+                  <p className="pt-3">
+                    Created god gathered don't you yielding herb you had. And
+                    isn't, god was saw. Dominion. Great sixth for in unto was.
+                    Open can't tree am waters brought. Divide after there. Was.
+                  </p>
+                  <p>
+                    Created god gathered don't you yielding herb you had. And
+                    isn't, god was saw. Dominion. Great sixth for in unto was.
+                    Open can't tree waters brought. Divide after there. Was.
+                    Created god gathered don't you yielding herb you had. And
+                    isn't god.
+                  </p>
+                  <a href="#" className="template-btn mt-3">
+                    book a table
+                  </a>
                 </div>
               </div>
             </div>
-            <div className="row">
-              {/* this.state.products.filter(item=>item.nameRes === this.option).map(item=>console.log(item)); */}
-              {this.state.option !== "" ? this.state.products.filter(item=>item.nameRes === this.state.option).map((product, index)=> (
-                  //   <div className="col-md-4 col-sm-6">
-                  //   <div className="single-food">
-                  //     <div className="food-img">
-                  //       <img src={product.image} className="img-fluid" alt="" />
-                  //     </div>
-                  //     <div className="food-content">
-                  //       <div className="d-flex justify-content-between">
-                  //         <h5>{product.nameFood}</h5>
-                  //         <span className="style-change">{product.price}</span>
-                  //       </div>
-                  //       <p className="pt-3">{product.nameFood}</p>
-                  //     </div>
-                  //   </div>
-                  // </div>
-                  <Cardd key={index} id={product.id} nameFood={product.nameFood} image={product.image} price={product.price}></Cardd>
-              )):
-               this.state.products.map((product, index) => (
-                // <div className="col-md-4 col-sm-6">
-                //   <div className="single-food">
-                //     <div className="food-img">
-                //       <img src={product.image} className="img-fluid" alt="" />
-                //     </div>
-                //     <div className="food-content">
-                //       <div className="d-flex justify-content-between">
-                //         <h5>{product.nameFood}</h5>
-                //         <span className="style-change">{product.price}</span>
-                //       </div>
-                //       <p className="pt-3">{product.nameFood}</p>
-                //     </div>
-                //   </div>
-                // </div>
-                <Cardd key={index} id={product.id} nameFood={product.nameFood} image={product.image} price={product.price}></Cardd>
-              ))
-              }
-              {
-               }
+          </div>
+        </section>
+        <section className="food-area">
+          <div className="container-fluid content">
+            <div className="left">
+              <FilterRes
+                optionName={this.state.optionName}
+                change={this.onHandlerChange}
+              />
+            </div>
+            <div className="right">
+              <div className="row">
+                <div className="col-md-5">
+                  <div className="section-top">
+                    <h3>
+                      <span className="style-change">we serve</span> <br />
+                      delicious food
+                    </h3>
+                    <p className="pt-3">
+                      They're fill divide i their yielding our after have him
+                      fish on there for greater man moveth, moved Won't together
+                      isn't for fly divide mids fish firmament on net.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                {this.state.optionName !== ""
+                  ? this.state.products
+                      .filter((item) => item.nameRes === this.state.optionName)
+                      .map((product, index) => (
+                        <Cardd
+                          key={index}
+                          id={product.id}
+                          nameFood={product.nameFood}
+                          image={product.image}
+                          price={product.price}
+                        ></Cardd>
+                      ))
+                  : this.state.products.map((product, index) => (
+                      <Cardd
+                        key={index}
+                        id={product.id}
+                        nameFood={product.nameFood}
+                        image={product.image}
+                        price={product.price}
+                      ></Cardd>
+                    ))}
+                {}
+              </div>
             </div>
           </div>
-        </div>
-      </section></>
-
+        </section>
+          {/* Update Area Starts */}
+          <section className="update-area">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="section-top2 text-center">
+                    <h3>Our <span>food</span> update</h3>
+                    <p><i>Beast kind form divide night above let moveth bearing darkness.</i></p>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                  <div className="single-food">
+                    <div className="food-img">
+                      <img src="assets/images/update1.jpg" className="img-fluid" alt="" />
+                    </div>
+                    <div className="food-content">
+                      <div className="post-admin d-lg-flex mb-3">
+                        <span className="mr-5 d-block mb-2 mb-lg-0"><i className="fa fa-user-o mr-2" />Admin</span>
+                        <span><i className="fa fa-calendar-o mr-2" />18/09/2018</span>
+                      </div>
+                      <h5>no finer food can be found</h5>
+                      <p>nancy boy off his nut so I said chimney pot be James Bond aking cakes he.</p>
+                      <a href="#" className="template-btn3 mt-2">read more <span><i className="fa fa-long-arrow-right" /></span></a>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="single-food my-5 my-md-0">
+                    <div className="food-img">
+                      <img src="assets/images/update2.jpg" className="img-fluid" alt="" />
+                    </div>
+                    <div className="food-content">
+                      <div className="post-admin d-lg-flex mb-3">
+                        <span className="mr-5 d-block mb-2 mb-lg-0"><i className="fa fa-user-o mr-2" />Admin</span>
+                        <span><i className="fa fa-calendar-o mr-2" />20/09/2018</span>
+                      </div>
+                      <h5>things go better with food</h5>
+                      <p>nancy boy off his nut so I said chimney pot be James Bond aking cakes he.</p>
+                      <a href="#" className="template-btn3 mt-2">read more <span><i className="fa fa-long-arrow-right" /></span></a>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="single-food">
+                    <div className="food-img">
+                      <img src="assets/images/update3.jpg" className="img-fluid" alt="" />
+                    </div>
+                    <div className="food-content">
+                      <div className="post-admin d-lg-flex mb-3">
+                        <span className="mr-5 d-block mb-2 mb-lg-0"><i className="fa fa-user-o mr-2" />Admin</span>
+                        <span><i className="fa fa-calendar-o mr-2" />22/09/2018</span>
+                      </div>
+                      <h5>food head above the rest</h5>
+                      <p>nancy boy off his nut so I said chimney pot be James Bond aking cakes he.</p>
+                      <a href="#" className="template-btn3 mt-2">read more <span><i className="fa fa-long-arrow-right" /></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {/* Update Area End */}
+      </>
     );
   }
 }
