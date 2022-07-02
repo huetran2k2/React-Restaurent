@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./style.css";
+import "../css/style.css";
 import FilterRes from "./FilterRes";
-import Cardd from "./card";
+import Cart from "./Cart";
 
 class List extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class List extends Component {
       nameFood: "",
       image: "",
       optionName: "",
-      optionPrice: "",
     };
     this.componentDidMount = this.componentDidMount.bind(this);
     this.onHandlerChange = this.onHandlerChange.bind(this);
@@ -82,6 +81,31 @@ class List extends Component {
                 optionName={this.state.optionName}
                 change={this.onHandlerChange}
               />
+              {/*  */}
+              <div className="bannerWrapper">
+        <div className="bannerTop">
+          <div>FOODFUN </div><div><span className="bold">come with us</span></div><div>100% off today</div>
+        </div>
+        <div className="bannerTopSub">
+          <div>
+            <span>-100%</span> <br />only today
+          </div>
+        </div>
+        <div className="bannerPicture">
+        </div>
+        <div className="bannerGuarantee">
+          <div className="bannerLike" />
+          <span>
+            <div className="guaranteeLine">Like </div>
+            <div className="guaranteeLine">Share </div>
+            <div className="guaranteeLine">Subscribe</div>
+          </span>
+        </div>
+        <div className="bannerBottom">
+          <button className="rentNow">BUY NOW</button>
+        </div>
+      </div>
+              {/*  */}
             </div>
             <div className="right">
               <div className="row">
@@ -104,22 +128,22 @@ class List extends Component {
                   ? this.state.products
                       .filter((item) => item.nameRes === this.state.optionName)
                       .map((product, index) => (
-                        <Cardd
+                        <Cart
                           key={index}
                           id={product.id}
                           nameFood={product.nameFood}
                           image={product.image}
                           price={product.price}
-                        ></Cardd>
+                        ></Cart>
                       ))
                   : this.state.products.map((product, index) => (
-                      <Cardd
+                      <Cart
                         key={index}
                         id={product.id}
                         nameFood={product.nameFood}
                         image={product.image}
                         price={product.price}
-                      ></Cardd>
+                      ></Cart>
                     ))}
                 {}
               </div>

@@ -6,13 +6,13 @@ class FilterRes extends Component {
         this.state = {}
       } 
       formSubmit(event){
-        event.preventDefault(); 
+        event.preventDefault();
       }
     render() {
         return (
             <div>
                 <div className='res'>
-                    <h4>Lựa chọn nhà hàng</h4>
+                    <h4>RESTAURANT SELECTION</h4>
                     <form className='optionRes' onSubmit={this.formSubmit}>
                         <span>
                             <input
@@ -20,7 +20,7 @@ class FilterRes extends Component {
                             value="dori" 
                             checked={this.props.optionName==="dori"}
                             onChange={this.props.change}
-                            /> NH Dori
+                            /> Dori Restaurant
                             
                         </span>
                         <span>
@@ -29,7 +29,7 @@ class FilterRes extends Component {
                             value="honghanh"
                             checked={this.props.optionName==="honghanh"}
                             onChange={this.props.change}
-                             /> NH Hồng Hạnh
+                             /> Hong Hanh Restaurant
                             
                         </span>
                         <span>
@@ -38,7 +38,7 @@ class FilterRes extends Component {
                             value="phuongnam" 
                             checked={this.props.optionName==="phuongnam"}
                             onChange={this.props.change}
-                            /> NH Phương Nam
+                            /> Phuong Nam Restaurant
                         </span>
                         <span>
                             <input
@@ -46,7 +46,7 @@ class FilterRes extends Component {
                             value="" 
                             checked={this.props.optionName===""}
                             onChange={this.props.change}
-                            /> Tất cả nhà hàng
+                            /> All Restaurants
                         </span>
                        
                     </form>

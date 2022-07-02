@@ -1,0 +1,263 @@
+.content { 
+    padding: 10%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.optionRes{
+    display: flex;
+    flex-direction:column;
+
+}
+h4{
+    color: black;
+}
+.res{
+    padding: 25px 0;
+}
+.left{
+    margin: 0 auto;
+}
+
+.btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    background: orange;
+    font-size: .7rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+    letter-spacing: 1.2px;
+    margin-left: 15px;
+    border: none;
+}
+
+.btnCart{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    background: orange;
+    font-size: .7rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+    letter-spacing: 1.2px;
+    right: 37px;
+    border: none;
+    top: 350px;
+    position:absolute;
+}
+
+.btn:hover{
+    color: orange;
+    background: white;
+}
+.bannerWrapper{
+    background-color: #fec007;
+    width: 300px;
+    height: 600px;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    padding-top: 34px;
+    line-height: 34px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.bannerTop{
+    color: #850000;
+    font-size: 31px;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 0px;
+}
+.bannerTop div{
+    animation-name: bannerTopA;
+    transform: translateX(-300px);
+    animation-duration: 10s;/*1sec actual*/
+    /*animation-direction: alternate;*/
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.bannerTop div:nth-child(1){
+    animation-delay: 0.2s;
+}
+.bannerTop div:nth-child(2){
+    animation-delay: 0.4s;
+}
+.bannerTop div:nth-child(3){
+    animation-delay: 0.6s;
+}
+.bannerTop span{
+    font-size: 39px;
+    line-height: 39px;
+    font-weight: 700;
+}
+
+.bannerTopSub{
+    margin-top: 26px;
+    color: white;
+    width: 143px;
+    height: 75px;
+    background-color: #9d2801;
+    border-bottom-left-radius: 34px;
+    border-top-left-radius: 34px;
+    padding-left: 22px;
+    font-size: 22px;
+    line-height: 22px;
+    display: flex;
+    box-sizing: border-box;
+    align-self: flex-end;
+
+    animation-name: bannerTopSubA;
+    transform: translateX(300px);
+    /*animation-delay: 3s; /*disappears at 7.5s*/
+    animation-duration: 10s;/*delay till 3sec/ 3.7sec full duration, actual duartion - 0.8s(21.6%)*//*disappears at 7.5s*/
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.bannerTopSub div{
+    margin: auto;
+    margin-left:0;
+}
+.bannerTopSub span{
+    font-size: 34px;
+    line-height: 34px;
+}
+
+.bannerPicture{
+    margin-top: 45px;
+    background: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX26680618.jpg');
+    width: 300px;
+    height: 405px;
+    object-fit: cover;
+    animation-name: bannerTruckA;
+    transform: translateX(300px);
+    /*animation-delay: 3.1s; /*disappears at 9*/
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.bannerGuarantee{
+    margin-top: 40px;
+    color: black;
+    display: flex;
+    line-height: 1;
+    align-self: center;
+}
+.bannerLike{
+    width: 46px;
+    height: 47px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAvCAMAAACrOwigAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJlQTFRFAAAAozEDhQAAnCUBskwFhQAAhQAAnCUB97YGlRsA97YGtVEEyWsF/sEI5p8FiwoAhQAA97YGiwoAhQAAozEDpzsFwmEF4JEFlRsAiwoA1oUI5qgHozEDmyQA4JEFtVEEtVEE0XoG0XoGnCUBy28FlRsA/sEI5p8FlRsApzsFskwFskwFskwFmyQAmyQApzsFmyQAwmEFiwoAcrO4gQAAADN0Uk5TAPX/9eHr9esY/xfr/////9j/4eH///9e4ev//+v///X///X///UYYuvr9f/r9eH16+v1gk5eCAAAAalJREFUeJyt1WtXgkAQBmB4bScxlo1ct4REDCu7X/7/j2uXhc06ksM5vZ8UH8dhzjJG0cHEmBz+4FBOBIHE6ZTJBZAAOJ2x9BkhlZkC8YrHgJTW0/kILlMIFhdIHM8VXXD4HNpxueCVF/ZOXQzE5XF9Rcg6zpmN6Hph8dmSULD5dIK+OKd3q1XZ8cVA9ZhcYvuKrM46Le0xWF7Hba5dm6HgXlZBV3tXiYRYrlu+j5XJey1r/ApNfHFfMIWqSzmUbJOAbly7uv/xzSB2KYHmB6/+5FIDY3gyittJaR7fGmMWdjYpjyd+krd3/GYq1T4t7N7rcdyfZzbXEPd8vgHtWNVL4+fY7oXjfNOdyAceb2OAxxFcAvEInoHGNNMvWB7PFebfPNvmg7ywY3xSwHPghX2o8yG+8mN8mQauVznSP5op7WN9HwVeqwZZhaYY8iasesfzWhd+DWlT5Qd4091oFO0IHqT9+mmettXPhbMFvUahPLRNY9fU225u/4G76BC7LPvi0eyVvCBx5t4/vwgKX+nXXdBus+7aDfz+feFjHfut7PP5cGTN/1O+ANxvRt7djPIHAAAAAElFTkSuQmCC');
+    margin-right: 9px;
+    animation-name: bannerLikeA;
+    animation-iteration-count: infinite;
+    transform: translateY(300px);
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.guaranteeLine{
+    animation-name: bannerGuaranteeLineA;
+    animation-iteration-count: infinite;
+    transform: translateX(300px);
+    animation-duration: 10s;/*delay is 3 sec, actual duration 0.8s. disappears at 7 same way it appeared*/
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.guaranteeLine:nth-child(1){
+    animation-delay: 0.15s;
+}
+.guaranteeLine:nth-child(2){
+    animation-delay: 0.2s;
+}
+.guaranteeLine:nth-child(3){
+    animation-delay: 0.25s;
+}
+
+.bannerBottom{
+    margin-top: 46px;
+    align-self: center;
+}
+.rentNow{
+    background-color: #3d3d3c;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+
+    animation-name: bannerRentNowA;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes bannerTopA {
+    0% {transform: translateX(-300px); opacity: 0;}
+    10% {transform: translateX(0px); opacity: 1;}
+    90% {transform: translateX(0px); opacity: 1;}
+    100% {transform: translateX(-300px); opacity: 0;}
+}
+@keyframes bannerTopSubA {
+    /*delay till 3sec/ 3.8sec full duration, actual duartion - 0.8s*//*disappears at 7.5s*/
+    0% {transform: translateX(300px); opacity: 0;}
+    30% {transform: translateX(300px); opacity: 0;}
+    38% {transform: translateX(0px); opacity: 1;}
+    75% {transform: translateX(0px); opacity: 1;}
+    83% {transform: translateX(300px); opacity: 0;}
+    100% {transform: translateX(300px); opacity: 0;}
+}
+@keyframes bannerTruckA {
+    /*3.1s - starts, 3.9 - actual animation ended disappears at 9*/
+    0% {transform: translateX(300px); opacity: 0;}
+    31% {transform: translateX(300px); opacity: 0;}
+    39% {transform: translateX(0px); opacity: 1;}
+    90% {transform: translateX(0px); opacity: 1;}
+    92% {transform: translateX(0px); opacity: 0;}
+    100% {transform: translateX(0px); opacity: 0;}
+}
+@keyframes bannerLikeA {
+    /*delay 3.6s, actual duration 0.3s, starts disappearing at 7 same way it appeared*/
+    0% {transform: translateY(300px); opacity: 0;}
+    36% {transform: translateY(300px); opacity: 0;}
+    39% {transform: translateY(0px); opacity: 1;}
+    70% {transform: translateY(0px); opacity: 1;}
+    73% {transform: translateY(300px); opacity: 0;}
+    100% {transform: translateY(300px); opacity: 0;}
+}
+@keyframes bannerGuaranteeLineA {
+    /*delay is 3 sec, actual duration 0.8s. disappears at 7 same way it appeared*/
+    0% {transform: translateX(300px); opacity: 0;}
+    30% {transform: translateX(300px); opacity: 0;}
+    38% {transform: translateX(0px); opacity: 1;}
+    70% {transform: translateX(0px); opacity: 1;}
+    78% {transform: translateX(300px); opacity: 0;}
+    100% {transform: translateX(300px); opacity: 0;}
+}
+@keyframes bannerRentNowA {
+    /*delay 3.2s, actual: 1.3s, starts disapp at 6s*/
+    0% {opacity: 0;}
+    32% {opacity: 0;}
+    36% {opacity: 1;}
+    38% {opacity: 1;}
+    42% {opacity: 0;}
+    45% {opacity: 1;}
+    60% {opacity: 1;}
+    64% {opacity: 0;}
+    66% {opacity: 0;}
+    70% {opacity: 1;}
+    73% {opacity: 0;}
+    100% {opacity: 0;}
+}

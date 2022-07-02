@@ -1,17 +1,13 @@
-// import Item from 'antd/lib/list/Item';
 import axios from "axios";
 import React, { Fragment, Component } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import List from "../Restaurant/Menu";
-import Bill from "./Bill";
-import "./emptyCart.css";
+import "../css/emptyCart.css";
 
 // process.env.REACT_APP_NAME_VARIABLE=window.Item; (lấy dữ liệu all)
 window.window.window.total = 0;
 const URL_API = "https://61bec846b25c3a00173f4b70.mockapi.io/Bills";
 const CART_KEY = "ShoppingCart";
-export default class Card extends Component {
+export default class Item_Cart extends Component {
   shoppingCart = [];
   constructor(prop) {
     super(prop);
@@ -132,8 +128,7 @@ export default class Card extends Component {
             }}
             role="button"
             className="btn btn-outline-success"
-          >
-            Quay lại giỏ hàng
+          >BACK TO HOME
           </Link>
           <Fragment>
             <table style={{ width: "100%" }}>
@@ -522,7 +517,7 @@ export default class Card extends Component {
                   fill="none"
                 />
               </svg>
-              <h6>Giỏ hàng rỗng!</h6>
+              <h6>Your cart is currently empty.</h6>
             </div>
           </Fragment>
         </div>
@@ -546,7 +541,7 @@ export default class Card extends Component {
             role="button"
             className="btn btn-outline-success"
           >
-            Quay lại giỏ hàng
+            BACK TO HOME
           </Link>
           <Fragment>
             <table style={{ width: "100%" }}>
@@ -670,7 +665,7 @@ export default class Card extends Component {
                 role="button"
                 className="btn btn-outline-success"
               >
-                Tiếp tục mua hàng
+                RETURN TO SHOP
               </Link>
 
               <Link
@@ -687,15 +682,11 @@ export default class Card extends Component {
               >
                 Check out
               </Link>
-              {/* <Routes>
-                <Route path="/Menu" element={<List />} />
-                <Route path="/Bill" element={<Bill />} />
-              </Routes> */}
             </span>
           </Fragment>
 
           <div className="container">
-            <h1 className="text-dark">Thông tin khách hàng</h1>
+            <h1 className="text-dark">Customer Information</h1>
             <form>
               <div className="form-group">
                 <label htmlFor="cusName">Customer Name</label>
@@ -708,7 +699,7 @@ export default class Card extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="formGroupExampleInput2">Phone number</label>
+                <label htmlFor="formGroupExampleInput2">Phone Number</label>
                 <input
                   type="text"
                   className="form-control"

@@ -3,9 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Card from "./Component/Restaurant/Item_card";
+import Item_Cart from "./Component/Restaurant/Item_cart";
 import List from "./Component/Restaurant/Menu";
-import Bill from "./Component/Restaurant/Bill";
 import Layout from "./Component/Layout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,10 +12,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* <Route path="/" element={<List />} /> */}
         <Route path="/Menu" element={<List />} />
-        {/* <Route path="/Bill" element={<Bill />} /> */}
-        <Route path="/Item_card" element={<Card />} />
+        <Route path="/Item_card" element={<Item_Cart />} />
       </Route>
     </Routes>
   </BrowserRouter>
